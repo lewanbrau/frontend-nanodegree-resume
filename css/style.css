@@ -139,6 +139,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+  font-size: 14px;
 }
 
 .center-content {
@@ -158,10 +159,15 @@ ul {
 
 img {
   padding: 10px;
+  /*max-height: 150px;*/
 }
 
 span {
   padding: 5px;
+}
+
+.proj-img {
+  max-height: 150px;
 }
 
 #lets-connect {
