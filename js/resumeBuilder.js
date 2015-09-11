@@ -25,8 +25,8 @@ bio.display = function(){
 	formattedContacts.push(HTMLgithub.replace("%data%", bio.contacts.github));
 	formattedContacts.push(HTMLblog.replace("%data%", bio.contacts.blog));
 	formattedContacts.push(HTMLlocation.replace("%data%", bio.contacts.location));
-	for (contact in formattedContacts){
-		$("#topContacts").append(formattedContacts[contact]);
+	for (var contact in formattedContacts){
+		$("#topContacts, #footerContacts").append(formattedContacts[contact]);
 	}
 	var formattedBioPic = HTMLbioPic.replace("%data%", bio.pictureURL);
 	$("#header").append(formattedBioPic);
@@ -40,7 +40,7 @@ bio.display = function(){
 		}
 	}
 
-}
+};
 
 var work = {
 	"jobs": [
@@ -62,7 +62,7 @@ var work = {
 };
 
 work.display = function(){
-	for (job in work.jobs){
+	for (var job in work.jobs){
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -73,7 +73,7 @@ work.display = function(){
 		$(".work-entry:last").append(formattedEmployerTitle);
 
 	}
-}
+};
 
 var projects = {
 	"projects": [
@@ -90,10 +90,10 @@ var projects = {
 			"image": "http://img1.wikia.nocookie.net/__cb20130523111808/adventuretimewithfinnandjake/images/d/d3/Ninja_Turtle_Donatello_4.gif.png"
 		}
 	]
-}
+};
 
 projects.display = function() {
-	for (project in projects.projects) {
+	for (var project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
 		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
 		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
@@ -101,7 +101,7 @@ projects.display = function() {
 		var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
 		$(".project-entry:last").append(formattedProjectTitle + formattedProjectDates + formattedProjectDescription + formattedProjectImage);
 	}
-}
+};
 
 // education JSON object
 var education = {
@@ -127,10 +127,10 @@ var education = {
 		"url": "https://www.udacity.com/course/intro-to-computer-science--cs101"
 	}
   ]
-}
+};
 
 education.display = function() {
-	for (school in education.schools) {
+	for (var school in education.schools) {
 		$("#education").append(HTMLschoolStart);
 		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
 		var formattedSchoollocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
@@ -139,9 +139,9 @@ education.display = function() {
 		$(".education-entry:last").append(formattedSchoolName + formattedSchooldegree + formattedSchoollocation + formattedSchoolmajor);
 	}
 
-}
+};
 
-bio.display()
+bio.display();
 work.display();
 projects.display();
 education.display();
